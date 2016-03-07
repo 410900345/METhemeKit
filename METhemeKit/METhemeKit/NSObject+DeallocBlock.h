@@ -14,6 +14,9 @@
 #import <Foundation/Foundation.h>
 #import "MEDeallocBlockExecutor.h"
 @interface NSObject (DeallocBlock)
+/**
+ *  deallocHelperExecutor是一个继承于NSObject的类，主要作用就是使用它的dealloc事件移除通知
+ */
 @property (nonatomic, copy)MEDeallocBlockExecutor *deallocHelperExecutor;
 
 @end

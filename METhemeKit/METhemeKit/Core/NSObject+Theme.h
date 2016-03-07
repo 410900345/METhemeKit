@@ -11,7 +11,7 @@
 typedef id _Nullable (^MEPicker)(void);
 
 @interface NSObject (Theme)
-@property (nonatomic, strong, nonnull) NSMutableDictionary<NSString *, MEPicker> *pickers;
+@property (nonatomic, strong, nonnull,readonly) NSMutableDictionary<NSString *, MEPicker> *pickers;
 
 - (void)removePickerForSEL:(nullable SEL)selector;
 @end

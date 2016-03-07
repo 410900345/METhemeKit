@@ -65,6 +65,7 @@
 #pragma mark - binding property
 #pragma mark - binding
 + (NSString *)getColorForMode:(NSString *)mode {
+    //这里通过管理类拿到当前主题的配置文件(是一个字典)，然后根据key值来获取对应的颜色
     NSString *colorStr = [METhemeManager sharedThemeManager].currentThemeConfig[@"Color"][mode];
     return colorStr;
 }

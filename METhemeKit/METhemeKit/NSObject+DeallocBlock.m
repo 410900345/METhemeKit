@@ -13,13 +13,7 @@
     return objc_getAssociatedObject(self, @selector(deallocHelperExecutor));
 }
 - (void)setDeallocHelperExecutor:(MEDeallocBlockExecutor *)deallocHelperExecutor{
-    if (objc_getAssociatedObject(self, @selector(deallocHelperExecutor)) == nil) {
-        __weak typeof(self) weakSelf;
-        MEDeallocBlockExecutor *deallocHelper = [[MEDeallocBlockExecutor alloc]initWith:^{
-            [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
-        }];
-        objc_setAssociatedObject(self, @selector(deallocHelperExecutor), deallocHelper, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
+    objc_setAssociatedObject(self, @selector(deallocHelperExecutor), deallocHelperExecutor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

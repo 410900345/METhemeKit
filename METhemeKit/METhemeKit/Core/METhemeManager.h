@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger,ThemeType) {
 ///`METhemeManager`应该作为单例出现在工程中
 + (METhemeManager *)sharedThemeManager;
 
-///图片名字前缀
+///当前主题图片名字前缀
 + (NSString *)getImageNamePrefix;
 
 

@@ -17,18 +17,14 @@
     NSString *key = NSStringFromSelector(selector);
     [self.pickers removeObjectForKey:key];
 }
--(void)setPickers:(NSMutableDictionary<NSString *,MEPicker> *)pickers{
-    objc_setAssociatedObject(self, @selector(pickers), pickers, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (pickers == nil) {
-        //如果pickers为空就移除通知
-        [[NSNotificationCenter defaultCenter]removeObserver:self];
-    }
-}
+
 -(NSMutableDictionary<NSString *,MEPicker> *)pickers{
     NSMutableDictionary<NSString *,MEPicker> *pickers = objc_getAssociatedObject(self, @selector(pickers));
     if (!pickers) {
+        //获取数组的时候进行初始化操作，同时进行通知的注册
         
         if (self.deallocHelperExecutor == nil) {
+            //这里添加一个属性，监听控件的dealloc事件，进行通知的移除
             __weak typeof(self) weakSelf;
             MEDeallocBlockExecutor *deallocHelper = [[MEDeallocBlockExecutor alloc]initWith:^{
                 [[NSNotificationCenter defaultCenter] removeObserver:weakSelf];
