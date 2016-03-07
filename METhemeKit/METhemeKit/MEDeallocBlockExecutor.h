@@ -14,6 +14,7 @@
 #import <Foundation/Foundation.h>
 typedef void(^DeallocBlock)(void);
 @interface MEDeallocBlockExecutor : NSObject
-@property (nonatomic, copy, readonly) DeallocBlock deallocBlock;
+
 - (instancetype)initWith:(DeallocBlock)deallocBlock;
+
 @end

@@ -11,7 +11,6 @@
 #import "ThemeProperties.h"
 #define BlackColorHex @"000000"
 
-static dispatch_once_t once;
 static METhemeManager *instance = nil;
 
 @interface METhemeManager ()
@@ -19,10 +18,16 @@ static METhemeManager *instance = nil;
 @end
 
 @implementation METhemeManager
++ (void)load{
+    [super load];
+    [METhemeManager sharedThemeManager];
+}
 + (METhemeManager *)sharedThemeManager {
-    dispatch_once(&once, ^{//为了确保多线程情况下，仍然确保实体的唯一性
-        instance = [[self alloc] init];
-    });
+    @synchronized(self){//为了确保多线程情况下，仍然确保实体的唯一性
+        if (!instance) {
+            instance = [[self alloc] init]; //确保使用同一块内存地址
+        }
+    }
     return instance;
 }
 +(id)allocWithZone:(NSZone *)zone{
@@ -47,36 +52,38 @@ static METhemeManager *instance = nil;
 }
 
 - (void)setThemeType:(ThemeType)themeType {
-    _themeType = themeType;
-    NSString *path;
-    switch (themeType) {
-        case ThemeDefault:{
-            _imageNamePrefix = @"";
-            path = [[NSBundle mainBundle]pathForResource:@"ThemeDefault" ofType:@"json"];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        _themeType = themeType;
+        NSString *path;
+        switch (themeType) {
+            case ThemeDefault:{
+                _imageNamePrefix = @"";
+                path = [[NSBundle mainBundle]pathForResource:@"ThemeDefault" ofType:@"json"];
+            }
+                break;
+            case ThemeYear:{
+                _imageNamePrefix = @"year_";
+                path = [[NSBundle mainBundle]pathForResource:@"ThemeOrange" ofType:@"json"];
+            }
+                break;
+            default:
+                break;
         }
-            break;
-        case ThemeYear:{
-            _imageNamePrefix = @"year_";
-            path = [[NSBundle mainBundle]pathForResource:@"ThemeOrange" ofType:@"json"];
+        NSData *jsonData = [NSData dataWithContentsOfFile:path];
+        _currentThemeConfig = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
+        if (_currentThemeConfig == nil) {
+            NSAssert(false, @"ThemeConfig配置有误", self);
+            abort();
         }
-            break;
-        default:
-            break;
-    }
-    NSData *jsonData = [NSData dataWithContentsOfFile:path];
-    _currentThemeConfig = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:nil];
-    if (_currentThemeConfig == nil) {
-        NSAssert(false, @"ThemeConfig配置有误", self);
-        abort();
-    }
-    //保存当前配置到本地
-    [self saveTypeLocal:themeType];
-    
-    /**
-     *  发送通知
-     */
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:kMEThemeChangeNotification object:nil userInfo:nil];
+        //保存当前配置到本地
+        [self saveTypeLocal:themeType];
+        
+        /**
+         *  发送通知
+         */
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:kMEThemeChangeNotification object:nil];
+        });
     });
 }
 #pragma mark - 获取配置

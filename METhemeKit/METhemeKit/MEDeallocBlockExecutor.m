@@ -7,18 +7,21 @@
 //
 
 #import "MEDeallocBlockExecutor.h"
-
+@interface MEDeallocBlockExecutor()
+@property (nonatomic, copy) DeallocBlock deallocBlock;
+@end
 @implementation MEDeallocBlockExecutor
 - (instancetype)initWith:(DeallocBlock)deallocBlock{
     self = [super init];
     if (self) {
-        _deallocBlock = [deallocBlock copy];
+        self.deallocBlock = deallocBlock;
     }
     return self;
 }
 -(void)dealloc{
     if (self.deallocBlock) {
         self.deallocBlock();
+        self.deallocBlock = nil;
     }
 }
 @end

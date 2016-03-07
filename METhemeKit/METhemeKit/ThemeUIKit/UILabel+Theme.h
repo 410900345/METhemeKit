@@ -10,5 +10,5 @@
 #import "UIColor+Theme.h"
 
 @interface UILabel (Theme)
-@property (nullable,nonatomic,copy)MEColorPicker me_textColor;
+@property (nonatomic,copy)MEColorPicker me_textColor;
 @end
