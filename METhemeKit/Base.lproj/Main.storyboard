@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="op7-WP-F4r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--First View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FirstViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="图片使用前缀进行区分，比如Default的图片名字为buttonImage@2x.png,新年橙色主题的图片名字就是year_buttonImage@2x.png,在读取图片的时候根据前缀读取相应的图片，添加了UIImage的扩展方法" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDN-4l-aCE">
+                                <rect key="frame" x="20" y="117" width="280" height="84"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kd3-gl-x2J">
+                                <rect key="frame" x="125" y="425" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="Aw0-on-JyP"/>
+                                    <constraint firstAttribute="height" constant="30" id="TBM-k4-P1D"/>
+                                </constraints>
+                                <state key="normal" title="下一页"/>
+                                <connections>
+                                    <action selector="next:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jR2-TG-6eH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWq-wS-zad">
+                                <rect key="frame" x="36" y="491" width="230" height="30"/>
+                                <state key="normal" title="发送切换主题的通知,但不切换主题"/>
+                                <connections>
+                                    <action selector="changeTemeNotification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bqX-Ee-Y5z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJ8-KL-l02">
+                                <rect key="frame" x="165" y="382" width="135" height="30"/>
+                                <state key="normal" title="取消图片的主题切换"/>
+                                <connections>
+                                    <action selector="removeImageTheme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ajv-SA-vI2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7cH-tS-KuG">
+                                <rect key="frame" x="20" y="216" width="280" height="158"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7cH-tS-KuG" secondAttribute="height" multiplier="16:9" id="IKi-cb-rWd"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7cH-tS-KuG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Qa-sw-JK7"/>
+                            <constraint firstAttribute="trailing" secondItem="7cH-tS-KuG" secondAttribute="trailing" constant="20" id="Ba9-Yt-blx"/>
+                            <constraint firstItem="PJ8-KL-l02" firstAttribute="top" secondItem="7cH-tS-KuG" secondAttribute="bottom" constant="8" id="Dzc-WF-ygK"/>
+                            <constraint firstItem="OWq-wS-zad" firstAttribute="top" secondItem="7cH-tS-KuG" secondAttribute="bottom" constant="117" id="G6s-Yy-VGi"/>
+                            <constraint firstItem="7cH-tS-KuG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="VWq-kK-Msv"/>
+                            <constraint firstAttribute="trailing" secondItem="SDN-4l-aCE" secondAttribute="trailing" constant="20" id="Zba-Dc-NSw"/>
+                            <constraint firstItem="Kd3-gl-x2J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zx3-2F-R4d"/>
+                            <constraint firstItem="Kd3-gl-x2J" firstAttribute="top" secondItem="7cH-tS-KuG" secondAttribute="bottom" constant="51" id="jTZ-R2-otb"/>
+                            <constraint firstItem="7cH-tS-KuG" firstAttribute="top" secondItem="SDN-4l-aCE" secondAttribute="bottom" constant="15" id="kye-6C-alJ"/>
+                            <constraint firstAttribute="trailing" secondItem="PJ8-KL-l02" secondAttribute="trailing" constant="20" id="m9U-2K-j9P"/>
+                            <constraint firstItem="SDN-4l-aCE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="n8e-JJ-xom"/>
+                            <constraint firstItem="OWq-wS-zad" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="nM0-XF-iPU"/>
+                            <constraint firstItem="SDN-4l-aCE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="tVp-gS-apq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nZN-0a-v1c"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="themeImageView" destination="7cH-tS-KuG" id="KOC-Yv-KyN"/>
+                        <outlet property="themeLabel" destination="SDN-4l-aCE" id="9B1-Ss-son"/>
+                        <outlet property="themeSureButton" destination="Kd3-gl-x2J" id="RmD-RK-Dbg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="-96"/>
+        </scene>
+        <!--Base Nav View Controller-->
+        <scene sceneID="vev-rP-d3z">
+            <objects>
+                <navigationController id="op7-WP-F4r" customClass="BaseNavViewController" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q0Z-rT-Rbg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="POK-Lw-dP4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3HR-g1-QXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-186" y="-101"/>
+        </scene>
+    </scenes>
+</document>

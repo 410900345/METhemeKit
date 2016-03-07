@@ -1,0 +1,59 @@
+{
+     "Color":{
+        "ThemeColorMode_Default":"03A9F4",
+        "ThemeColorMode_Default_Highlight":"13689C"
+    },
+    "UINavigationBar": {
+        "NavBarDefault":{
+            "tintColor":"03A9F4",
+            "backgroundImageColor":"03A9F4",
+            "shadowImageColor":"",
+            "titleLabelColor":"FFFFFF"
+        },
+        "NavBarLevel1":{
+            "tintColor":"03A9F4",
+            "backgroundImageColor":"03A9F4",
+            "shadowImageColor":"",
+            "titleLabelColor":"FFFFFF"
+        }
+    },
+    
+    "Button":{
+        "ThemeMode_Button_SureButton": {
+            "titleColor": {
+                "UIControlStateNormal":"FFFFFF",
+                "UIControlStateHighlight":"FFFFFF",
+                "UIControlStateDisabled":"FFFFFF",
+                "UIControlStateSelected":"FFFFFF"
+            }
+        },
+        "ThemeMode_Button_NoBackgroundImage_SureButton": {
+            "titleColor": {
+                "UIControlStateNormal":"03A9F4",
+                "UIControlStateHighlight":"03A9F4",
+                "UIControlStateDisabled":"666666",
+                "UIControlStateSelected":"03A9F4"
+            }
+        },
+        "ThemeMode_Button_NavBarRight":{
+            "titleColor": {
+                "UIControlStateNormal":"FFFFFF",
+                "UIControlStateHighlight":"4DFFFFFF",
+                "UIControlStateDisabled":"7FFFFFFF"
+            }
+        },
+        "ThemeMode_Button_ExpressAddressSele":{
+            "titleColor": {
+                "UIControlStateNormal":"888888",
+                "UIControlStateSelected":"7aa0b2"
+            }
+        },
+        "ThemeModel_Button_PickerView":{
+            "titleColor": {
+                "UIControlStateNormal":"03A9F4",
+                "UIControlStateHighlight":"4D03A9F4"
+            }
+        }
+    }
+    
+}
