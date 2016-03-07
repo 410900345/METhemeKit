@@ -78,8 +78,8 @@
 		849DD50F1C8988D000772BE1 /* METhemeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = METhemeKit.h; sourceTree = "<group>"; };
 		849DD5111C8988D000772BE1 /* ThemeDefault.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ThemeDefault.json; sourceTree = "<group>"; };
 		849DD5121C8988D000772BE1 /* ThemeOrange.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ThemeOrange.json; sourceTree = "<group>"; };
-		849DD5161C8988D000772BE1 /* CALayer+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+Theme.h"; path = "../ThemeUIKit/CALayer+Theme.h"; sourceTree = "<group>"; };
-		849DD5171C8988D000772BE1 /* CALayer+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+Theme.m"; path = "../ThemeUIKit/CALayer+Theme.m"; sourceTree = "<group>"; };
+		849DD5161C8988D000772BE1 /* CALayer+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Theme.h"; sourceTree = "<group>"; };
+		849DD5171C8988D000772BE1 /* CALayer+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Theme.m"; sourceTree = "<group>"; };
 		849DD51C1C8988D000772BE1 /* UIButton+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Theme.h"; sourceTree = "<group>"; };
 		849DD51D1C8988D000772BE1 /* UIButton+Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Theme.m"; sourceTree = "<group>"; };
 		849DD51E1C8988D000772BE1 /* UIImageView+Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Theme.h"; sourceTree = "<group>"; };
@@ -153,21 +153,21 @@
 			isa = PBXGroup;
 			children = (
 				849DD5041C8988D000772BE1 /* METhemeKit */,
+				849DD4CF1C89889100772BE1 /* Supporting Files */,
 				849DD4D21C89889100772BE1 /* AppDelegate.h */,
 				849DD4D31C89889100772BE1 /* AppDelegate.m */,
-				849DD4D81C89889100772BE1 /* Main.storyboard */,
 				849DD4DB1C89889100772BE1 /* Assets.xcassets */,
-				849DD4DD1C89889100772BE1 /* LaunchScreen.storyboard */,
-				849DD4E01C89889100772BE1 /* Info.plist */,
-				849DD4CF1C89889100772BE1 /* Supporting Files */,
-				849DD5411C8997DE00772BE1 /* FirstViewController.h */,
-				849DD5421C8997DE00772BE1 /* FirstViewController.m */,
-				849DD5441C8997ED00772BE1 /* SecondViewController.h */,
-				849DD5451C8997ED00772BE1 /* SecondViewController.m */,
 				849E44D31C8D211C00397F6F /* BaseNavViewController.h */,
 				849E44D41C8D211C00397F6F /* BaseNavViewController.m */,
 				849E44D61C8D233E00397F6F /* BaseViewController.h */,
 				849E44D71C8D233E00397F6F /* BaseViewController.m */,
+				849DD5411C8997DE00772BE1 /* FirstViewController.h */,
+				849DD5421C8997DE00772BE1 /* FirstViewController.m */,
+				849DD4E01C89889100772BE1 /* Info.plist */,
+				849DD4DD1C89889100772BE1 /* LaunchScreen.storyboard */,
+				849DD4D81C89889100772BE1 /* Main.storyboard */,
+				849DD5441C8997ED00772BE1 /* SecondViewController.h */,
+				849DD5451C8997ED00772BE1 /* SecondViewController.m */,
 			);
 			path = METhemeKit;
 			sourceTree = "<group>";
@@ -177,14 +177,14 @@
 			children = (
 				849DD4D01C89889100772BE1 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		849DD4E81C89889200772BE1 /* METhemeKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				849DD4E91C89889200772BE1 /* METhemeKitTests.m */,
 				849DD4EB1C89889200772BE1 /* Info.plist */,
+				849DD4E91C89889200772BE1 /* METhemeKitTests.m */,
 			);
 			path = METhemeKitTests;
 			sourceTree = "<group>";
@@ -192,8 +192,8 @@
 		849DD4F31C89889200772BE1 /* METhemeKitUITests */ = {
 			isa = PBXGroup;
 			children = (
-				849DD4F41C89889200772BE1 /* METhemeKitUITests.m */,
 				849DD4F61C89889200772BE1 /* Info.plist */,
+				849DD4F41C89889200772BE1 /* METhemeKitUITests.m */,
 			);
 			path = METhemeKitUITests;
 			sourceTree = "<group>";
@@ -201,11 +201,11 @@
 		849DD5041C8988D000772BE1 /* METhemeKit */ = {
 			isa = PBXGroup;
 			children = (
-				849DD50F1C8988D000772BE1 /* METhemeKit.h */,
-				849DD5101C8988D000772BE1 /* ThemeData */,
 				849DD5051C8988D000772BE1 /* Core */,
 				849E44D91C8D276500397F6F /* DeallocBlock */,
+				849DD5101C8988D000772BE1 /* ThemeData */,
 				849DD5131C8988D000772BE1 /* ThemeUIKit */,
+				849DD50F1C8988D000772BE1 /* METhemeKit.h */,
 			);
 			path = METhemeKit;
 			sourceTree = "<group>";
@@ -213,15 +213,15 @@
 		849DD5051C8988D000772BE1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				849DD50A1C8988D000772BE1 /* ThemeProperties.h */,
+				849DD5161C8988D000772BE1 /* CALayer+Theme.h */,
+				849DD5171C8988D000772BE1 /* CALayer+Theme.m */,
 				849DD5061C8988D000772BE1 /* METhemeManager.h */,
 				849DD5071C8988D000772BE1 /* METhemeManager.m */,
 				849DD5081C8988D000772BE1 /* NSObject+Theme.h */,
 				849DD5091C8988D000772BE1 /* NSObject+Theme.m */,
+				849DD50A1C8988D000772BE1 /* ThemeProperties.h */,
 				849DD50B1C8988D000772BE1 /* UIColor+Theme.h */,
 				849DD50C1C8988D000772BE1 /* UIColor+Theme.m */,
-				849DD5161C8988D000772BE1 /* CALayer+Theme.h */,
-				849DD5171C8988D000772BE1 /* CALayer+Theme.m */,
 				849DD50D1C8988D000772BE1 /* UIImage+Theme.h */,
 				849DD50E1C8988D000772BE1 /* UIImage+Theme.m */,
 			);
@@ -257,12 +257,12 @@
 		849E44D91C8D276500397F6F /* DeallocBlock */ = {
 			isa = PBXGroup;
 			children = (
-				849E44DA1C8D27C300397F6F /* NSObject+DeallocBlock.h */,
-				849E44DB1C8D27C300397F6F /* NSObject+DeallocBlock.m */,
 				849E44DD1C8D2B5A00397F6F /* MEDeallocBlockExecutor.h */,
 				849E44DE1C8D2B5A00397F6F /* MEDeallocBlockExecutor.m */,
+				849E44DA1C8D27C300397F6F /* NSObject+DeallocBlock.h */,
+				849E44DB1C8D27C300397F6F /* NSObject+DeallocBlock.m */,
 			);
-			name = DeallocBlock;
+			path = DeallocBlock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,6 +456,7 @@
 				849DD4D91C89889100772BE1 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		849DD4DD1C89889100772BE1 /* LaunchScreen.storyboard */ = {
@@ -464,6 +465,7 @@
 				849DD4DE1C89889100772BE1 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
